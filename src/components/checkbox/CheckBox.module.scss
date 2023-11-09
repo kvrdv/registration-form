@@ -1,0 +1,123 @@
+@import '../../assets/styles/variables.scss';
+
+.formCheckbox {
+	&:hover {
+		@include cursor-hover;
+	}
+
+	&:active {
+		@include cursor-active;
+	}
+
+	> label {
+		&:hover {
+			@include cursor-hover;
+		}
+
+		&:active {
+			@include cursor-active;
+		}
+
+		display: block;
+		position: relative;
+		padding-left: 2.3rem;
+		margin: 0.5rem 0;
+		cursor: pointer;
+		width: fit-content;
+		text-align: center;
+
+		.color {
+			&:hover {
+				@include cursor-hover;
+			}
+
+			&:active {
+				@include cursor-active;
+			}
+
+			color: $accent;
+		}
+
+		.checkbox {
+			&:hover {
+				@include cursor-hover;
+			}
+
+			&:active {
+				@include cursor-active;
+			}
+
+			position: absolute;
+			opacity: 0;
+			cursor: pointer;
+			height: 0;
+			width: 0;
+
+			&:checked ~ .checked:after {
+				&:hover {
+					@include cursor-hover;
+				}
+
+				&:active {
+					@include cursor-active;
+				}
+
+				display: block;
+				@include cursor-hover;
+			}
+
+			&:checked ~ .checked {
+				&:hover {
+					@include cursor-hover;
+				}
+
+				&:active {
+					@include cursor-active;
+				}
+
+				border: 1px solid $accent;
+			}
+		}
+
+		.checked {
+			&:hover {
+				@include cursor-hover;
+			}
+
+			&:active {
+				@include cursor-active;
+			}
+
+			position: absolute;
+			top: 8px;
+			left: 0;
+			height: 18px;
+			width: 18px;
+			background-color: $white;
+			border: 1px solid $accent;
+			border-radius: 100%;
+			transition: border 0.3s ease-in-out;
+
+			&:after {
+				&:hover {
+					@include cursor-hover;
+				}
+
+				&:active {
+					@include cursor-active;
+				}
+
+				content: '';
+				position: absolute;
+				display: none;
+				cursor: pointer;
+				left: 2px;
+				top: 2px;
+				width: 14px;
+				height: 14px;
+				border-radius: 100%;
+				background-color: $accent;
+			}
+		}
+	}
+}

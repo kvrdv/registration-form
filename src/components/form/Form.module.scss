@@ -1,0 +1,204 @@
+@import '../../assets/styles/variables.scss';
+
+.form {
+	.formLegend {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		text-shadow: 0px 4px 4px $shadow;
+		margin-bottom: 0.3rem;
+		font-size: 16px;
+	}
+
+	.formField {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+
+		.formInput {
+			height: 55px;
+			border: none;
+			border-bottom: 1px solid $black;
+			padding-top: 1rem;
+			@include font-primary;
+
+			&::placeholder {
+				color: $black;
+				opacity: 1;
+			}
+
+			&:focus {
+				outline: none;
+			}
+
+			&:focus + label {
+				color: $accent;
+				@include transition;
+			}
+
+			&:focus::placeholder {
+				color: transparent;
+				@include transition;
+			}
+		}
+
+		.formLabel {
+			color: $white;
+			user-select: none;
+			position: absolute;
+			top: 8px;
+			left: 2px;
+			@include cursor;
+		}
+
+		.formText {
+			resize: none;
+			border: none;
+			border: 1px solid $black;
+			border-radius: 0.5rem;
+			padding: 1rem 3rem 1rem 1rem;
+			margin-top: 2.3rem;
+			@include font-primary;
+
+			&::placeholder {
+				color: $black;
+				opacity: 1;
+			}
+
+			&:focus {
+				outline: none;
+			}
+
+			&:focus + label {
+				color: $accent;
+				@include transition;
+			}
+
+			&:focus::placeholder {
+				color: transparent;
+				@include transition;
+			}
+		}
+
+		.formTextHidden {
+			background-color: $hidden;
+			@include transition;
+			pointer-events: none;
+
+			&::placeholder {
+				color: transparent;
+			}
+		}
+
+		.infoButton {
+			position: absolute;
+			right: 1rem;
+			top: 3.2rem;
+			width: 24px;
+			height: 24px;
+			border-radius: 100%;
+			background-color: $button-bg;
+			color: $white;
+			@include transition;
+
+			&:hover {
+				@include cursor-hover;
+				background-color: $accent;
+				filter: drop-shadow(0px 0px 8px $accent-shadow);
+			}
+
+			&:active {
+				@include cursor-active;
+			}
+		}
+	}
+
+	.formUpload {
+		margin: 0 0 2.3rem 1rem;
+		display: flex;
+		flex-wrap: nowrap;
+
+		> label {
+			min-width: fit-content;
+
+			&:hover {
+				@include cursor-hover;
+			}
+
+			&:active {
+				@include cursor-active;
+			}
+		}
+
+		> input {
+			&:hover {
+				@include cursor-hover;
+			}
+
+			&:active {
+				@include cursor-active;
+			}
+		}
+	}
+
+	.notUploaded {
+		> input {
+			display: none;
+		}
+	}
+
+	.upLoaded {
+		> label {
+			color: $accent;
+			@include transition;
+		}
+
+		> input {
+			color: $accent !important;
+			@include transition;
+			@include font-primary;
+			margin-left: 1rem;
+
+			&::file-selector-button {
+				display: none;
+			}
+		}
+	}
+
+	.hiddenLoad {
+		> label {
+			color: $button-bg;
+			@include transition;
+			pointer-events: none;
+		}
+
+		> input {
+			display: none;
+		}
+	}
+
+	.formFooter {
+		display: grid;
+		gap: 24px;
+		grid-template-columns: 1fr 239px;
+		font-size: 16px;
+
+		.formSubmit {
+			height: 56px;
+			border-radius: 8px;
+			background-color: $button-bg;
+			color: $white;
+			@include transition;
+
+			&:hover {
+				@include cursor-hover;
+				background-color: $accent;
+				filter: drop-shadow(0px 0px 8px $accent-shadow);
+			}
+
+			&:active {
+				@include cursor-active;
+			}
+		}
+	}
+}

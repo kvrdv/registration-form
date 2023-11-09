@@ -1,0 +1,49 @@
+@import '../../assets/styles/variables.scss';
+
+.card {
+	background-color: $white;
+	z-index: 1;
+	width: 528px;
+    height: 638px;
+	padding: 2rem 55px;
+	border-radius: 8px;
+	box-shadow: 0px 4px 4px 0px $shadow;
+	border: 1px solid $black;
+}
+
+
+.rotateOn {
+	animation: rotationOn 0.5s 1 linear;
+}
+
+.rotateOff {
+	animation: rotationOff 0.5s 1 linear;
+}
+
+@keyframes rotationOn {
+	0% {
+		transform: scaleX(1);
+	}
+
+	50% {
+		transform: scaleX(0);
+	}
+
+	100% {
+		transform: scaleX(1);
+	}
+}
+
+@keyframes rotationOff {
+	0% {
+		transform: scaleX(1);
+	}
+
+	50% {
+		transform: scaleX(0);
+	}
+
+	100% {
+		transform: scaleX(1);
+	}
+}

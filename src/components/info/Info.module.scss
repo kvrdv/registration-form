@@ -1,0 +1,54 @@
+@import '../../assets/styles/variables.scss';
+
+.infoWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	@include font-primary;
+    height: 100%;
+	justify-content: space-between;
+
+	.header {
+		font-size: 24px;
+	}
+
+	.oListItem {
+		font-size: 22px;
+		margin-bottom: 24px;
+
+		.uListItem {
+			font-size: 16px;
+            list-style-type: none;
+
+            .uListItem {
+                list-style-type: none;
+            }
+		}
+	}
+
+    .button {
+        height: 56px;
+        border-radius: 8px;
+        background-color: $accent;
+        color: $white;
+        padding: 0 1rem;
+        @include transition;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        > svg {
+            width: 3rem;
+        }
+
+        &:hover {
+            @include cursor-hover;
+            background-color: $accent;
+            filter: drop-shadow(0px 0px 8px $accent-shadow);
+        }
+
+        &:active {
+            @include cursor-active;
+        }
+    }
+}
